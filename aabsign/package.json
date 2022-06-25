@@ -1,0 +1,21 @@
+{
+  "name": "aab_bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^3.8.1",
+    "dotenv": "^10.0.0",
+    "grammy": "^1.4.3",
+    "mongoose": "^6.0.8",
+    "telegram": "^2.0.6",
+    "tsc": "^2.0.3"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "prisma": "^3.8.1"
+  }
+}

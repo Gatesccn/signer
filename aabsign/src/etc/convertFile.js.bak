@@ -1,0 +1,20 @@
+import exec from "./exec.js"
+import { existsSync } from "fs"
+
+export default async function(filename) {
+	try {
+		const aabFilename = filename.replace(".apk", ".aab")
+		return {
+			logs: await exec(
+		`python3 bundletool.py -i ${filename} -o ${aabFilename} --keystore tools/key.jks --store_password 123456 --key_alias key0 --key_password 123456 2>> ${aabFilename}.logs`
+			),
+			exists: existsSync(aabFilename),
+			aabFilename,
+		}
+	} catch (err) {
+		return {
+			exists: false,
+			logs: err.toString(),
+		}
+	}
+}
